@@ -1,0 +1,7 @@
+{
+    "default_top_restaurants": 10,
+    "top_restaurants": 5,
+    "restaurant_name": "Happy Garden",
+    "cuisine_name": "Mexican",
+    "score_to_add" : 5
+}
