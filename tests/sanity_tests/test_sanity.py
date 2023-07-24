@@ -1,11 +1,9 @@
 import logging
 import os
-
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from pages.dashboard_page import DashboardPage
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -21,12 +19,6 @@ def driver():
     yield _driver
     _driver.quit()
 
-@pytest.fixture
-def dashboard_page(driver):
-    page = DashboardPage(driver)
-    page.goto()
-    yield page
-    driver.quit()
 
 
 def test_get_top_restaurants_with_top_value(dashboard_page, datafile):

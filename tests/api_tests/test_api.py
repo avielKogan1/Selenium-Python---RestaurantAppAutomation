@@ -1,10 +1,8 @@
 import json
-import pytest
 from dotenv import load_dotenv
 import os
 import logging
 
-from api_methods.dashboard_page_api import DashboardPageAPI
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -22,10 +20,6 @@ with open(path_to_json, 'r') as file:
     api_routes = json.load(file)
 
 
-@pytest.fixture
-def dashboard_page_api():
-    dashboard_page_api = DashboardPageAPI()
-    yield dashboard_page_api
 
 def test_get_dashboard_page(dashboard_page_api):
     response = dashboard_page_api.get_dashboard_page()
