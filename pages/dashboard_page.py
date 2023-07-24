@@ -24,6 +24,7 @@ class DashboardPage:
     CHANGE_CUISINE_STATUS_ELEMENT = (By.ID, 'changeCuisineStatus')
 
     SCORE_TO_ADD_INPUT_FIELD = (By.ID, 'scoreToAdd')
+    LIMIT_INPUT_FIELD = (By.ID, 'limit')
     SUBMIT_ADD_SCORE_FORM_BUTTON = (By.ID, 'submitAddScoreForm')
     ADD_SCORE_STATUS_ELEMENT = (By.ID, 'addScoreStatus')
 
@@ -106,8 +107,13 @@ class DashboardPage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.SCORE_TO_ADD_INPUT_FIELD)).clear()
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.SCORE_TO_ADD_INPUT_FIELD)).send_keys(score)
 
+    def enter_limit(self, limit):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.LIMIT_INPUT_FIELD)).clear()
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.LIMIT_INPUT_FIELD)).send_keys(limit)
+
     def submit_add_score_form(self):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.SUBMIT_ADD_SCORE_FORM_BUTTON)).click()
+        logger.info("Submit Add Score button clicked")
 
     def verify_top_restaurants_status(self, status: Literal["Success", "Failure"]):
         status_message = WebDriverWait(self.driver, 10).until(
