@@ -3,5 +3,6 @@
     "top_restaurants": 5,
     "restaurant_name": "Happy Garden",
     "cuisine_name": "Mexican",
-    "score_to_add" : 5
+    "score_to_add" : 3,
+    "limit" : 6
 }

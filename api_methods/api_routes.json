@@ -1,0 +1,5 @@
+{
+    "get_dashboard_page": "",
+    "get_top_restaurants": "restaurants",
+    "patch_add_score": "restaurants/addscore"
+}

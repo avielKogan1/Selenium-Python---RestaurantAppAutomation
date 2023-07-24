@@ -21,13 +21,13 @@ def driver():
     yield _driver
     _driver.quit()
 
-
 @pytest.fixture
 def dashboard_page(driver):
     page = DashboardPage(driver)
     page.goto()
     yield page
     driver.quit()
+
 
 def test_get_top_restaurants_with_top_value(dashboard_page):
     top_restaurants = 5
