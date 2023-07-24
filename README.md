@@ -1,2 +1,0 @@
-# Selenium/Python - RestaurantAppAutomation
- 
